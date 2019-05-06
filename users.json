@@ -1,0 +1,83 @@
+﻿{
+    "users": [
+        {
+            "login": "adm",
+            "password": "$p5k2$3e8$Y56e3MyV$r9j2p1UR0sCxY6ZBbGXKU84o5q89SZxN",
+            "group": "admin",
+            "email": "adm@mail.com",
+            "phone": "",
+            "org": "",
+            "name": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "surname": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "patron": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e"
+        },
+        {
+            "login": "dir1",
+            "password": "$p5k2$3e8$2xiE/TuM$d5t6FYXeUuDUa7EFYOayXLTF.LBK8/Qi",
+            "group": "director",
+            "email": "dir1@mail.com",
+            "phone": "+77777777777",
+            "org": "",
+            "name": "Ilya",
+            "surname": "Naumov",
+            "patron": "Alexseevich",
+            "birth": "1992-02-13"
+        },
+        {
+            "login": "dir2",
+            "password": "$p5k2$3e8$47O0v8Cf$xo87XaUP.01LG1UkkWjZXiCDDCaKd0DW",
+            "group": "director",
+            "email": "dir2@mail.com",
+            "phone": "+77777773777",
+            "org": "Cafe",
+            "name": "Mihail",
+            "surname": "Petrov",
+            "patron": "Eduardovich",
+            "birth": "1980-02-03"
+        },
+        {
+            "login": "emp1",
+            "password": "$p5k2$3e8$MhamOjIZ$A1gWR6RbNmQMb.N0bSDFKBTeoiFLR/Yb",
+            "group": "admin",
+            "email": "emp1@mail.com",
+            "phone": "",
+            "org": "BaberSHOP",
+            "name": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "surname": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "patron": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e"
+        },
+        {
+            "login": "emp2",
+            "password": "$p5k2$3e8$UgmfUcmf$/TajdUun5ro7OH6RiVwT1u1xD/..HbUf",
+            "group": "emp",
+            "email": "emp2@mail.com",
+            "phone": "",
+            "org": "Cafe",
+            "name": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "surname": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "patron": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e"
+        },
+        {
+            "login": "user1",
+            "password": "$p5k2$3e8$SfPAv77u$XpXjKZtTlBgoy7EomyW.HapnhAb/P.Qv",
+            "group": "user",
+            "email": "user1@mail.com",
+            "phone": "",
+            "org": "BaberSHOP",
+            "name": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "surname": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "patron": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e"
+        },
+        {
+            "login": "user2",
+            "password": "$p5k2$3e8$j3gb.WmN$tHoDjpTv6q4HGZbJbPcI25W90UGVw3MP",
+            "group": "user",
+            "email": "user2@mail.com",
+            "phone": "",
+            "org": "Cafe",
+            "name": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "surname": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e",
+            "patron": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u043e"
+        }
+    ]
+}

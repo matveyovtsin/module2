@@ -1,0 +1,114 @@
+﻿{
+    "orgs": [
+        {
+            "name": "BaberSHOP",
+            "director": "dir1",
+            "date": "1999-08-22",
+            "offers": [
+                {
+                    "offername": "Male haircut",
+                    "descript": "Male haircut for 5$",
+                    "time": 20
+                },
+                {
+                    "offername": "Female haircut",
+                    "descript": "Female haircut for 10$",
+                    "time": 30
+                },
+                {
+                    "offername": "Beard trim",
+                    "descript": "Beard trim",
+                    "time": 10
+                }
+            ]
+        },
+        {
+            "name": "Cafe",
+            "director": "dir2",
+            "date": "2018-01-01",
+            "offers": [
+                {
+                    "offername": "Lunch",
+                    "descript": "bake + coffee",
+                    "time": 30
+                },
+                {
+                    "offername": "Dinner",
+                    "descript": "Soup + chiken",
+                    "time": 30
+                },
+                {
+                    "offername": "Water",
+                    "descript": "Cold water",
+                    "time": "10"
+                }
+            ]
+        }
+    ],
+    "orderpart": {
+        "count": 11,
+        "orders": [
+            {
+                "id": 1,
+                "org": "TestOrg",
+                "offer": "TestOffer01",
+                "author": "user2",
+                "title": "TestZakaz",
+                "opendate": "2018-03-28",
+                "closedate": "2018-04-01",
+                "status": 0
+            },
+            {
+                "id": 7,
+                "org": "BaberSHOP",
+                "offer": "Male haircut",
+                "author": "user1",
+                "title": "10:15",
+                "opendate": "2018-11-3",
+                "closedate": "2018-11-23",
+                "status": 1,
+                "emp": "emp1"
+            },
+            {
+                "id": 8,
+                "org": "BaberSHOP",
+                "offer": "Male haircut",
+                "author": "user1",
+                "title": "sdfgh",
+                "opendate": "2019-2-5",
+                "closedate": "2019-02-25",
+                "status": 0
+            },
+            {
+                "id": 9,
+                "org": "BaberSHOP",
+                "offer": "Male haircut",
+                "author": "user1",
+                "title": "qeawrdftjg",
+                "opendate": "2019-2-6",
+                "closedate": "2019-02-26",
+                "status": 0
+            },
+            {
+                "id": 10,
+                "org": "BaberSHOP",
+                "offer": "Male haircut",
+                "author": "user1",
+                "title": "wasfsdg",
+                "opendate": "2019-2-6",
+                "closedate": "2019-02-26",
+                "status": 0
+            },
+            {
+                "id": 11,
+                "org": "BaberSHOP",
+                "offer": "Male haircut",
+                "author": "user1",
+                "title": "weatsd",
+                "opendate": "2019-2-6",
+                "closedate": "2019-02-26",
+                "status": 0
+            }
+        ]
+    }
+}
