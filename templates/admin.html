@@ -1,0 +1,123 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Администратор</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+ <div style="width: 90%; height: 80px; display: inline-block; padding-left: 5%">
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/home'">
+            <h2>Главная страница</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/cab'">
+            <h2>Личный кабинет</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/'">
+            <h2>Выход</h2>
+        </div>
+    </div>
+<div id="container">
+    <div id="orgs">
+        <table border="1px" id="orgtb">
+        <th class='orgth'>Организация</th>
+        <th class='orgth'>Директор</th>
+        <th class='orgth'>Удалить</th>
+            {% for elem in orgs_info %}
+                <tr>
+                <td> {{ elem.name }}</td>
+                <td> {{ elem.director }} <form method="POST" action="/changeDirector/">
+                                              {% csrf_token %}
+                                              <input type="hidden" value="{{elem.name}}" name="name" >
+                                              <select name="director">
+                                                  {% for elem in users_info %}
+                                                      {% if elem.group == 'director' %}
+                                                         <option value="{{ elem.login }}">{{ elem.login }}</option>
+                                                      {% endif %}
+                                                  {% endfor %}
+                                              </select>
+                                              <input type="submit" value="Изменить">
+                                         </form></td>
+                <td> <form method="get" action="/delOrg/">
+                    <input type="hidden" value="{{elem.name}}" name="name">
+                    <input type="submit" value="Удалить">
+                </form> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="line">
+    <hr noshade style="height: 850px;width: 1px;">
+    </div>
+    <div id="addbutton">
+        <a href="/addorg/" ><input type="button" value="Добавить организацию" ></a>
+    </div>
+    <div id="peoples">
+        <h1>Пользователи: </h1>
+    <p style="color: red;">{{ Error }}</p>
+    <table id="users">
+    <th>Пользователь</th>
+    <th>Группа</th>
+    <th>Изменить группу</th>
+    <th>Организация</th>
+    <th>Изменить организацию</th>
+    <th>Удалить</th>
+        {% for elem in users_info %}
+            <tr>
+                <td>{{ elem.login }}</td>
+                <td>{{ elem.group }}</td>
+                <td> <form action="/changeUser/" method="GET" >
+                    <select title="group" name="group">
+                        <option value="admin">Админиcтратор</option>
+                        <option value="director">Директор</option>
+                        <option value="emp">Сотрудник</option>
+                        <option value="user">Пользователь</option>
+                    </select>
+                    <input type="hidden" name="login" value="{{ elem.login }}">
+                    <input type="submit" value="Изменить">
+                </form></td>
+                <td>{{ elem.org }}</td>
+                <td>
+                    <form action="/changeEmpOrg/" method="GET" >
+                    <select title="org" name="org">
+                        {%  for elem in orgs_info %}
+                            <option value="{{ elem.name }}">{{ elem.name }}</option>
+                        {%  endfor %}
+                    </select>
+                    <input type="hidden" value="{{elem.login}}" name="login">
+                    <input type="submit" value="Изменить">
+                </form></td>
+                <td><form action="/delUser/" method="GET">
+                    <input type="hidden" name="login" value="{{ elem.login }}">
+                    <input type="submit" value="Удалить">
+                </form></td>
+            </tr>
+
+            
+        {% endfor %}
+    </table>
+    Информация о пользователе:
+    <form action="/choseUser/" method="get">
+        <select name="login">
+            {% for elem in users_info %}
+                <option>{{ elem.login }}</option>
+            {% endfor %}
+        <input type="submit" value="Отобразить">
+        </select>
+    </form>
+    {% if user != '' %}
+        <p>
+            Пользователь: {{ user.login }}<br>
+            E-mail: {{ user.email }}<br>
+            Имя: {{ user.name }}<br>
+            Фамилия: {{ user.surname }}<br>
+            Отчество: {{ user.patron }}<br>
+            Телефон: {{ user.phone }}<br>
+            Дата рождения: {{ user.birth }}<br>
+        </p>
+    {% endif %}
+    </div>
+</div>
+</body>
+</html>

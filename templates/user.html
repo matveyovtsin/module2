@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователь</title>
+    <script type="text/javascript">
+        function setdate() {
+            date = new Date();
+            document.getElementById('opendate').value = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+    }
+    </script>
+</head>
+<body onload="setdate()">
+ <div style="width: 90%; height: 80px; display: inline-block; padding-left: 5%">
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/home'">
+            <h2>Главная страница</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/cab'">
+            <h2>Личный кабинет</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/'">
+            <h2>Выход</h2>
+        </div>
+    </div>
+{% for elem in offerList %}
+    <p>
+        <h2>
+           Организация {{ elem.org }}
+        </h2>
+    {% for offer in elem.offers %}
+        <h3 style="padding-left: 3%">
+             Услуга {{ offer.offername }}
+        </h3>
+        <p style="padding-left: 7%">{{ offer.descript }}</p>
+        {% endfor %}
+    </p>
+{% endfor %}
+<form method="post" action="/addOrder/">
+{% csrf_token %}
+    Выберите услугу:<select name="order" required>
+        {% for elem in offerList %}
+            <optgroup label="{{ elem.org }}" >
+        {% for offer in elem.offers %}
+            <option>{{ elem.org}}.{{offer.offername }}</option>
+        {% endfor %}
+        </optgroup>
+        {% endfor %}
+    </select><br><br>
+    Введите описание заказа:<input type="text" name="orderText" required><br><br>
+    <input type="text" id="opendate" name="opendate" hidden>
+    <input type="submit" value="Оформить заказ">
+</form>
+</body>
+</html>

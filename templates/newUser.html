@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый пользователь</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+<div class="login">
+    <form method="post" action="/createUser/">
+        {% csrf_token %}
+        <p style="color: red"> {{ Error }}</p>
+    Введите имя пользователя: <input type="text" name="login" required><br><br>
+    Введите пароль: <input type="password" name="password" required><br><br>
+    Введите e-mail: <input type="text" name="email" required><br><br>
+    Номер телефона(по желанию): <input type="text" name="phone"><br>
+    <input type="submit" value="Создать"  class="button">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Директор</title>
+</head>
+<body>
+ <div style="width: 90%; height: 80px; display: inline-block; padding-left: 5%">
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/home'">
+            <h2>Главная страница</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/cab'">
+            <h2>Личный кабинет</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/'">
+            <h2>Выход</h2>
+        </div>
+    </div>
+<div class="container">
+    <div>
+        <form action="/changeOrg/" method="get">
+            <input type="submit" value="Изменить информацию о компании">
+        </form>
+    </div>
+    <div style="width:70%">
+        <h1> Заказы компании:</h1>
+        {% for elem in orderList %}
+            <h2> Заказ №{{ elem.id }}</h2>
+            <p> Автор: {{ elem.author }}
+                Описание: {{ elem.title }}
+                Дата заказа: {{ elem.opendate }}
+                {% if elem.status == 0 %}
+                   Дата планируемого окончания: {{ elem.closedate }}
+                   Статус: Не обработан
+                {% else %}
+                    Дата окончания: {{ elem.closedate }}
+                    Обработавший сотрудник: {{ elem.emp }}
+                    Статус: Обработан
+            {% endif %}</p>
+            <hr width="100%">
+        {% endfor %}
+    </div>
+    <div style="width: 30%">
+        <h1>Сотрудники: </h1>
+    <table id="users">
+    <th>Сотрудник</th>
+    <th>Должность</th>
+    <th>Удалить</th>
+        {% for elem in emps_info %}
+            <tr>
+                <td>{{ elem.login }}</td>
+                <td>{{ elem.group }}</td>
+                <td> <form action="/changeUser/" method="GET" >
+                    <input type="text" name="group" value="user" hidden>
+                    <input type="hidden" name="login" value="{{ elem.login }}">
+                    <input type="text" value="{{ org }}" name="org" hidden>
+                    <input type="submit" value="Удалить">
+                </form></td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/changeUser/" method="GET">
+        <p style="color: red;">{{ Error }}</p>
+        Введите логин пользователя:<input type="text" name="login" required>
+        <input type="text" value="emp" name="group" hidden>
+        <input type="text" value="{{ org }}" name="org" hidden>
+        <input type="submit" value="Добавить">
+    </form>
+    Информация о сотруднике:
+    <form action="/choseUser/" method="get">
+        <select name="login">
+            {% for elem in emps_info %}
+                <option>{{ elem.login }}</option>
+            {% endfor %}
+        <input type="submit" value="Отобразить">
+        </select>
+    </form>
+    {% if user != '' %}
+        <p>
+            Пользователь: {{ user.login }}<br>
+            E-mail: {{ user.email }}<br>
+            Имя: {{ user.name }}<br>
+            Фамилия: {{ user.surname }}<br>
+            Отчество: {{ user.patron }}<br>
+            Телефон: {{ user.phone }}<br>
+            Дата рождения: {{ user.birth }}<br>
+        </p>
+    {% endif %}
+    </div>
+</div>
+</body>
+</html>

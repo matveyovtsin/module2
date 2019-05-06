@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить организацию</title>
+</head>
+<body>
+ <div style="width: 90%; height: 80px; display: inline-block; padding-left: 5%">
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/home'">
+            <h2>Главная страница</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/cab'">
+            <h2>Личный кабинет</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/'">
+            <h2>Выход</h2>
+        </div>
+    </div><br>
+
+ <h2>Название организации:</h2><form action="/changeOrgName/" method="get">
+                                <input type="text" id="name" name="name" value="{{ orginfodict.name }}" disabled><br><br>
+                                <input type="submit" id="approve" value="Подтвердить" disabled hidden>
+                            </form>
+                                <button onclick="document.getElementById('name').disabled = false;
+                                                document.getElementById('approve').disabled = false;
+                                                document.getElementById('approve').hidden = false;
+                                                this.hidden = true;" >Изменить</button><br><br>
+ <h2>Предлагаемые услуги:</h2> {% for elem in orginfodict.offers %}
+                                <p> Название услуги: {{ elem.offername }}</p>
+                                <p> Описание услуги: {{ elem.descript }}</p>
+                                <p>Примерное время выполнения(в днях): {{ elem.time }}</p>
+     <hr width="80%" align="left">
+                            {% endfor %}
+<form id="add" disabled='true' hidden action="/addoffer/" method="post">
+    {% csrf_token %}
+    <input type="text" value="{{ orginfodict.name }}" name="name" hidden>
+    Название услуги:<input type="text" name="offername" required> <br><br>
+    Описание услуги:<input type="text" name="descript" required><br><br>
+    Примерное время выполнения(в днях): <input type="text" name="time" required> <br><br>
+    <input type="submit" value="Добавить">
+</form>
+<button onclick="document.getElementById('add').hidden = false;
+                 document.getElementById('add').disabled = false;
+                 this.hidden = true;" >Добавить услугу</button>
+
+</body>
+</html>

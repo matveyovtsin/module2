@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудник</title>
+</head>
+<body>
+ <div style="width: 90%; height: 80px; display: inline-block; padding-left: 5%">
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/home'">
+            <h2>Главная страница</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/cab'">
+            <h2>Личный кабинет</h2>
+        </div>
+        <div style="width: 33%; height: 100%; float: left; text-align: center; background-color: #f16a43;" onclick="location.href='/'">
+            <h2>Выход</h2>
+        </div>
+    </div>
+    {% for elem in orderList %}
+        {% if elem.status != 1 %}
+        <h2> Заказ №{{ elem.id }}</h2>
+                На предложение {{ elem.offer }} <br>
+                Описание заказа: {{ elem.title }} <br>
+                Автор заказа: {{ elem.author }} <br>
+                E-mail: {{ elem.email }} <br>
+                Телефон: {{ elem.phone }} <br>
+                Имя Отчество: {{ elem.name }} <br>
+                Дата заказа: {{ elem.opendate }} <br>
+            <form action="/changeOrder/" method="get">
+                Примерная дата выполнения <input type="date" name="closedate" value="{{ elem.closedate }}"> <br>
+                <input type="text" value="{{ elem.id }}" name="id" hidden>
+                <input type="submit" value="Обработан">
+            </form>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

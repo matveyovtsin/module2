@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+<div class="login">
+    <p style="color: red"> {{ ErrorMessage }} </p>
+    <form method="post" action="/login/">
+        {% csrf_token %}
+    Логин: <input type="text" title="Логин" name="login" align="center" required autofocus><br><br>
+    Пароль: <input type="password" title="Пароль" name="password" align="center" required><br><br>
+    <input type="submit" title="Войти" value="Войти" class="button"><br><br>
+</form>
+
+<a href="/newUser/"><button class="button">Новый пользователь</button></a>
+</div>
+</body>
+</html>
