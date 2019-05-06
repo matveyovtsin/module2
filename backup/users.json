@@ -1,0 +1,88 @@
+﻿{
+    "users": [
+        {
+            "login": "admin",
+            "password": "$p5k2$$g0gh45N9$Yx6RCG9qh9EDJbO/lv9JpxpECxklnqWM",
+            "group": "admin",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "test2",
+            "password": "$p5k2$$AuwBa61N$2JV67IdiV/KgPCvKLx/C00P7EXwa4gJT",
+            "group": "director",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "test3",
+            "password": "$p5k2$$3ROvmg/N$p3jo9QJ6OKOsI6qvIfdI/4DKzTN5vC6r",
+            "group": "user",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "1",
+            "password": "$p5k2$$gKPZLtrZ$.ZdyRxfK/j/xDr2/2PGDIX3Q0zh8Ka4y",
+            "group": "user",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "2",
+            "password": "$p5k2$3e8$K6dRttwb$B2vMz1fUjuK1CtnX29zKu2od1TmOZJug",
+            "group": "user",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "user1",
+            "password": "$p5k2$3e8$YiOCcJdG$yBLpkPm4O/0f6oPXkGbV.POcwzKSVwD1",
+            "group": "director",
+            "email": "milo@milo.ru",
+            "phone": "",
+            "org": "",
+            "name": "TestName",
+            "surname": "TestSurname",
+            "patron": "TestPatron",
+            "birth": "1960-01-01"
+        },
+        {
+            "login": "user2",
+            "password": "$p5k2$3e8$Cb3hWqTL$8CnDmdnhOeIOYBvDgJ1s7dz69XzN1.Mc",
+            "group": "user",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "dirtest",
+            "password": "$p5k2$3e8$sxuf4Agq$btiXJTy2SjfdBl/A0KdWeM8hVft4ovr4",
+            "group": "director",
+            "email": "",
+            "phone": "",
+            "org": ""
+        },
+        {
+            "login": "testemp",
+            "password": "$p5k2$3e8$8pf8iieo$gfF5/NVW5MOrRBGSrC7JexvREaPBSkwq",
+            "group": "emp",
+            "email": "",
+            "phone": "",
+            "org": "TestOrg"
+        },
+        {
+            "login": "brandnew",
+            "password": "$p5k2$3e8$Is49PM.h$pfou83jANGuWaD4ReMw7Y037UqQF4vi5",
+            "group": "user",
+            "email": "brandnew@mail.ru",
+            "phone": "",
+            "org": ""
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+﻿{
+    "orgs": [
+        {
+            "name": "TestOrg",
+            "director": "test2",
+            "date": "1999-08-22",
+            "offers": [
+                {
+                    "offername": "TestOffer01",
+                    "descript": "TestOffer01Desc",
+                    "time": 30
+                },
+                {
+                    "offername": "TestOffer01",
+                    "descript": "TestOffer01Desc",
+                    "time": 30
+                },
+                {
+                    "offername": "Offer001",
+                    "descript": "DescOffer001",
+                    "time": 30
+                }
+            ]
+        },
+        {
+            "name": "TestOrg2",
+            "director": "dirtest",
+            "date": "2018-01-01",
+            "offers": [
+                {
+                    "offername": "TestOffer1",
+                    "descript": "Description",
+                    "time": 30
+                },
+                {
+                    "offername": "TestOffer2",
+                    "descript": "Descript",
+                    "time": 30
+                }
+            ]
+        }
+    ],
+    "orderpart": {
+        "count": 2,
+        "orders": [
+            {
+                "id": 1,
+                "org": "TestOrg",
+                "offer": "TestOffer01",
+                "author": "user2",
+                "title": "TestZakaz",
+                "opendate": "2018-03-28",
+                "closedate": "2018-04-01",
+                "status": 0
+            },
+            {
+                "id": 2,
+                "org": "TestOrg",
+                "offer": "Offer001",
+                "author": "test5",
+                "title": "Title001",
+                "opendate": "7-5-2018",
+                "closedate": "2018-6-6",
+                "status": 1
+            }
+        ]
+    }
+}
