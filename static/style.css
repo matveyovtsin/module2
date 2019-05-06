@@ -1,0 +1,55 @@
+.login{
+    margin: auto;
+    padding-left: 40%;
+    padding-top: 10%;
+}
+.login1{
+    margin: auto;
+    padding-top: 10%;
+}
+.button{
+    margin: auto;
+}
+div {
+
+}
+#line{
+    width: 3px;
+    float: left;
+}
+#addbutton{
+    height: 25px;
+    width: 200px;
+    padding-right: 5%;
+    padding-top: 2%;
+    margin: 0;
+    float: right;
+}
+#box {
+    height: 100%;
+    width: 100%;
+}
+#orgs{
+    height: 750px;
+    width: 40%;
+    float: left;
+}
+#orgtb{
+    width: 95%;
+}
+#peoples{
+    height: 700px;
+    width: 58%;
+    float: right;
+}
+.container{
+    overflow:hidden;
+    width:100%;
+    display: inline-block;
+    white-space:nowrap;
+}
+#users{
+    width: 100%;
+    float: right;
+
+}
